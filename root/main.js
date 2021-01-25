@@ -16,10 +16,12 @@ $(function() {
     place();
 });
 
+
+
 function place() {
     $("#board").on("click", ".cell", function() {
         if ($(this).text() !== '') {
-            alert('That was not a valid move!');
+            $(".alert").text("Invalid move!")
             return;
         } 
         update($(this));
@@ -150,6 +152,7 @@ function checkDiagnalMove(toRow, fromRow, toColumn, fromColumn, slope) {
 }
 
 function update(cell) {   
+    $(".alert").text("")
     newRow = parseInt(cell.attr('data-row'));
     newColumn = parseInt(cell.attr('data-column'));
     if (previousTurn[turn]) {
@@ -186,10 +189,16 @@ function update(cell) {
         gameOver = checkGameOver();
         console.log('gameOver', gameOver)
         if (gameOver.includes(true)) {
-            alert(`Game over!\nPlayer ${gameOver[0] ? 'O' : 'X'} won!`)
+            $("body").css({
+                "overflow": "hidden"
+            });
+            $("#winnertext").text(`Player ${gameOver[0] ? 'O' : 'X'} Won!`);
+            $(".modal").css({
+                "display": "block"
+            });
         }        
     
     } else {
-        alert('That was not a valid move!');
+        $(".alert").text("Invalid move!")
     }
 }

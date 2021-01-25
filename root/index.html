@@ -9,7 +9,10 @@
 <body>
     <header>
         <h1>Isolation</h1>
-        <h2 class="turntext">Turn: X</h2>
+        <div id="gameheader">
+            <h2 class="turntext">Turn: X</h2>
+            <h2 class="alert"></h2>
+        </div>            
     </header>
 
     <div id="board">
@@ -42,6 +45,15 @@
         </div>
     </div>
 
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <h3>Game Over!</h3>
+            <p id="winnertext">test</p>
+            <button onclick="window.location.reload(true)">REPLAY</button>
+        </div>
+    </div>
+      
+
     <div id="instructions">
         <h1>Game Rules:</h1>
         <h3>
@@ -55,7 +67,7 @@
             The game is over when a player does not have any available moves.
         </p>
         <h2>Contributors:</h2>
-        <h4><a href="#" class="fa fa-linkedin fa-1x"></a> Elijah Sattler</h4><h4><a href="#" class="fa fa-linkedin fa-1x"></a> Justen Caldwell</h4>
-        <div id="github"><a href="https://github.com/JustenC14/JustenC14.github.io"> <i class="fa fa-github fa-5x" aria-hidden="true"></i></a></div>
+        <h4><a href="#" class="fa fa-linkedin fa-1x"></a> Elijah Sattler</h4><h4><a href="#" class="fa fa-linkedin"></a> Justen Caldwell</h4>
+        <div id="github"><a href="https://github.com/JustenC14/JustenC14.github.io"> <i class="fa fa-github" aria-hidden="true"></i></a></div>
     </div>
 </body>    
